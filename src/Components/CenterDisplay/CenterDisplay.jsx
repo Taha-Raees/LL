@@ -4,8 +4,6 @@ import "./CenterDisplay.scss"
 const CenterDisplay = () => {
   return (
     <div className="centerDisplay">
-        
-        
     </div>
   )
 }

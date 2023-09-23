@@ -1,6 +1,8 @@
+"use client"
+import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { getTopNav } from './NavData';
 import CloseIcon from '@mui/icons-material/Close';
@@ -26,10 +28,10 @@ const onToggle=()=>{
   return (
     <div className="navbar">
       <div className="wrapper">
-      <Link className ="link" to="/"><img src="/Little-Lemon/images/c2.png" alt='' /></Link>
+      <Link className ="link" href="/"><Image src="/C2.png" alt='' width={100} height={100} layout="responsive" /></Link>
       <ul className={collapse}>
         {navItems.map((item)=>(
-          <li key={item.id}><Link className ="link" to={item.to}>{item.Label}</Link></li>
+          <li key={item.id}><Link className ="link" href={item.to}>{item.Label}</Link></li>
         ))}
       </ul>
       <div className={toggleIcon} onClick={onToggle}>
