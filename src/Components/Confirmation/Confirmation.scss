@@ -1,0 +1,41 @@
+.Confirmation{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 40px 250px;
+    background-color: rgba(229, 229, 229, 0.523);
+    text-align: center;
+    @media only screen and (max-width: 600px){
+        width: 100vw;
+        margin: 40px 0px;
+    }
+   
+    h2{
+        margin: 10px 200px;
+        font-weight: 300;
+        @media only screen and (max-width: 600px){
+            margin: 40px 0px;
+        }
+    }
+    .item{
+        margin-top: 30px;
+        span{
+            padding:14px 20px;
+            font-size: 18px;
+            border-radius: 7px;
+            background-color: beige;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            
+            
+            &:hover{
+                    background: #380d0d;;
+                    color: beige;
+                    border: 1px solid beige;
+              }
+            
+
+        }
+    }
+}

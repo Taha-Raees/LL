@@ -62,7 +62,8 @@ const ReservationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="reservation-form">
+    <div className="form">
+      <form onSubmit={handleSubmit} className="reservation-form">
       <label>
         First Name:
         <input
@@ -131,7 +132,9 @@ const ReservationForm = () => {
       </label>
       <button type="submit">Reserve</button>
     </form>
-  );
+  
+    </div>
+    );
 };
 
 export default ReservationForm;

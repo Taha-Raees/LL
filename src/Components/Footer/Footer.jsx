@@ -2,13 +2,13 @@
 import React from "react";
 import "./Footer.scss";
 import Link from 'next/link';
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className="footer">
       <div className="bottom">
-        
-          <span className="logo"><img src="/Little-Lemon/images/Asset 20@4x.png " /></span>
+          <span className="logo"><Image src="/Asset 20@4x.png "  alt='' width={100} height={100} layout="responsive" /></span>
           <span className="copyright">
             © Copyright 2023. All Rights Reserved
           </span>
@@ -41,7 +41,6 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      
     </div>
   );
 };

@@ -1,0 +1,48 @@
+.personalInfo{
+    
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 40px 150px;
+    background-color: rgba(229, 229, 229, 0.523);
+    @media only screen and (max-width: 600px){
+        width: 100vw;
+    }
+    .Time{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1vh 5vw;
+
+        input{
+            font-size: 15px;
+            padding: 10px 45px;
+            border-radius: 15px;
+            border: 1px solid gray;
+            text-align: center;
+            cursor: pointer;
+            @media only screen and (max-width: 600px){
+                padding: 10px 28px;
+            }
+            
+            
+        }
+
+    }
+    h2{
+            font-size: 24px;
+            margin-right: 250px;
+            color: rgb(89, 19, 19);
+            @media only screen and (max-width: 600px){
+                margin-right: 20px;
+            }
+    }
+    .inputItem{
+        display: flex;
+        gap: 15px;
+        font-size: 15px;
+
+        
+    }
+}
