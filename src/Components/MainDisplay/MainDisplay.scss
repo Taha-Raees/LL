@@ -110,60 +110,7 @@
             
         }
     }
-    .reservation{
-        display: flex;
-       margin: 70px 100px;
-        background-color: transparent;
-        @media only screen and (max-width: 600px) {
-            margin: 50px 0px;
-        
-        }
-        
-        .desc{
-            background-color: #380d0d;
-            margin: 70px 120px;   
-            text-align: center;
-            border-radius: 15px;
-            @media only screen and (max-width: 600px) {
-                margin: 50px 30px;
-            
-            }
-            span{
-                padding:14px 20px;
-                font-size: 18px;
-                border-radius: 7px;
-                background-color: beige;
-                cursor: pointer;
-                transition: all 0.5s ease;
-                
-                
-                &:hover{
-                        background: #380d0d;;
-                        color: beige;
-                        border: 1px solid beige;
-                  }
-            }
-        }
-       
-        h1{
-            font-size: 30px;
-            font-weight: 700;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            
-            color: #b7b67f; 
-        }
-        p{
-            margin-top: 40px;
-            font-size: 18px;
-            font-weight: 300;
-            margin-bottom: 40px;
-            color: rgb(185, 190, 190);
-            margin-right: 20px;
-            margin-left: 20px;
-        }
-        
-    }
+    
     
 
 }

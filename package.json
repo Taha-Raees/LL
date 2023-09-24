@@ -12,9 +12,9 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.9",
-    "@mui/material": "^5.14.9",
+    "@mui/material": "^5.14.10",
     "next": "^13.4.19",
-    "sass": "^1.67.0",
+    "sass": "^1.68.0",
     "scss": "^0.2.4"
   }
 }

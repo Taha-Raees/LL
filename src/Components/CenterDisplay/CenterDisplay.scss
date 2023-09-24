@@ -1,9 +1,77 @@
-.centerDisplay{
-    background: linear-gradient(rgba(0,0,0,0.5),#76535389),url(x.jpeg);
+.Center {
+    position: relative;
+  }
+  
+  .BackgroundDisplay {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #76535389), url(x.jpeg);
     background-size: cover;
     background-position: center;
     height: 100vh;
-    position: sticky;
-    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
     z-index: -1;
-}
+  }
+  
+  .reservations-container {
+    max-height: 100vh; /* Set the maximum height to the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  }
+  
+  .reservation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    padding: 70px 100px;
+  
+    @media only screen and (max-width: 600px) {
+      padding: 50px 0;
+    }
+  
+    .desc {
+      background-color: #380d0d;
+      margin: 0 0 70px 0;
+      text-align: center;
+      border-radius: 15px;
+  
+      @media only screen and (max-width: 600px) {
+        margin: 0 0 50px 0;
+      }
+  
+      span {
+        padding: 14px 20px;
+        font-size: 18px;
+        border-radius: 7px;
+        background-color: beige;
+        cursor: pointer;
+        transition: all 0.5s ease;
+  
+        &:hover {
+          background: #380d0d;
+          color: beige;
+          border: 1px solid beige;
+        }
+      }
+    }
+  
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-top: 40px;
+      margin-bottom: 30px;
+      color: #b7b67f;
+    }
+  
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 40px;
+      color: rgb(185, 190, 190);
+    }
+  }
+  
