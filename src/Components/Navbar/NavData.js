@@ -12,7 +12,7 @@ const topNav=[
     {
         id: 1,
         Label: "Reservation",
-        to:"/reservation"
+        to:"/ReservationForm"
     },
     {
         id: 1,

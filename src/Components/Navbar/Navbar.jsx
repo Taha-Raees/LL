@@ -28,7 +28,7 @@ const onToggle=()=>{
   return (
     <div className="navbar">
       <div className="wrapper">
-      <Link className ="link" href="/"><Image src="/C2.png" alt='' width={100} height={100} layout="responsive" /></Link>
+      <div className="img"><Link className ="link" href="/"><Image src="/C2.png" alt='' width={100} height={100} layout="responsive" /></Link></div>
       <ul className={collapse}>
         {navItems.map((item)=>(
           <li key={item.id}><Link className ="link" href={item.to}>{item.Label}</Link></li>

@@ -24,7 +24,6 @@ const ReservationForm = () => {
     if (!phoneNumber.match(/^\+49\d+/)) {
         errors.phoneNumber = 'Phone Number must start with "+49"';
       }
-      
     if (!date) {
       errors.date = 'Date is required';
     }
@@ -43,8 +42,6 @@ const ReservationForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validate the form before submitting
     const isValid = validateForm();
 
     if (isValid) {

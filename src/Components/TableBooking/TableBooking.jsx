@@ -2,41 +2,11 @@ import React from 'react'
 import "./TableBooking.scss"
 import { useState } from 'react'
 
-const TableBooking = ({formData,setFormData}) => {
-  const [errors, setErrors] = useState({}); // Store validation errors
-
-  const validateForm = () => {
-    const errors = {};
-    if (!date) {
-      errors.date = 'Date is required';
-    }
-    if (!time) {
-      errors.time = 'Time is required';
-    }
-    if (!numberOfPeople) {
-      errors.numberOfPeople = 'Number of People is required';
-    }
-
-    setErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const isValid = validateForm();
-
-    if (isValid) {
-      const reservationData = {
-        date,
-        time,
-        numberOfPeople,
-      };
-    }
-  };
+const TableBooking = ({formData,setFormData,TableSubmit,errors}) => {
   return (
     <div className="TableBooking">
      <div className="form">
-      <form onSubmit={handleSubmit} className="reservation-form">
+      <form onSubmit={TableSubmit} className="reservation-form">
       <label>
         Number of People:
         <select
@@ -61,8 +31,11 @@ const TableBooking = ({formData,setFormData}) => {
         Date:
         <input
           type="date"
-          value={formData.Date}
-          onChange={(e) => setFormData.date(e.target.value)}
+          value={formData.date}
+          onChange={(e) => setFormData((prevData) => ({
+            ...prevData,
+            date: e.target.value
+          }))}
           className={errors.date ? 'error' : ''}
         />
         {errors.date && <p className="error-message">{errors.date}</p>}
@@ -72,13 +45,16 @@ const TableBooking = ({formData,setFormData}) => {
         <input
           type="time"
           value={formData.time}
-          onChange={(e) => setFormData.time(e.target.value)}
+          onChange={(e) => setFormData((prevData) => ({
+            ...prevData,
+            time: e.target.value
+          }))}
           className={errors.time ? 'error' : ''}
         />
         {errors.time && <p className="error-message">{errors.time}</p>}
       </label>
       
-      <button type="submit">Reserve</button>
+      <button type="submit">Book a Table</button>
     </form>
     </div>
     </div>
