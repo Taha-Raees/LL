@@ -2,11 +2,11 @@ import React from 'react'
 import "./TableBooking.scss"
 import { useState } from 'react'
 
-const TableBooking = ({formData,setFormData,TableSubmit,errors}) => {
+const TableBooking = ({formData,setFormData,handleSubmit,errors}) => {
   return (
     <div className="TableBooking">
      <div className="form">
-      <form onSubmit={TableSubmit} className="reservation-form">
+      <form onSubmit={handleSubmit} className="reservation-form">
       <label>
         Number of People:
         <select
@@ -53,8 +53,6 @@ const TableBooking = ({formData,setFormData,TableSubmit,errors}) => {
         />
         {errors.time && <p className="error-message">{errors.time}</p>}
       </label>
-      
-      <button type="submit">Book a Table</button>
     </form>
     </div>
     </div>

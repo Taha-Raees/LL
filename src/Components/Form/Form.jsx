@@ -9,6 +9,7 @@ import Confirmation from '../Confirmation/Confirmation'
 const Form = () => {
  const [page,setPage]=useState(0);
  const [errors, setErrors] = useState({});
+ const [infoErrors, setInfoErrors] = useState({});
  const [formData,setFormData]= useState({
     location:"Select Location",
     time:"",
@@ -25,9 +26,9 @@ const Form = () => {
  const FormTitles=["Book A Table", "Personal Info", "Table Booked"];
  const PageDisplay = ()=>{
     if (page===0){
-        return <TableBooking TableSubmit={TableSubmit} formData={formData} setFormData={setFormData} errors={errors}/>
+        return <TableBooking handleSubmit={handleSubmit} formData={formData} setFormData={setFormData} errors={errors}/>
     } else if (page===1){
-        return<PersonalInfo  formData={infoData} setFormData={setInfoData}/>
+        return<PersonalInfo  handleSubmit={handleSubmit} formData={infoData} setFormData={setInfoData} infoErrors={infoErrors} page={page}/>
     } else{
         return <Confirmation/>
     }
@@ -54,16 +55,48 @@ const Form = () => {
     // Return true if there are no errors, indicating the form is valid
     return Object.keys(errors).length === 0;
   };
+  const validateInfoForm = () => {
+    const infoErrors = {}; // Change variable name to infoErrors
   
+    if (!infoData.firstName.trim()) {
+      infoErrors.firstName = 'First Name is required';
+    }
+    if (!infoData.lastName.trim()) {
+      infoErrors.lastName = 'Last Name is required';
+    }
+    if (!infoData.email.trim()) {
+      infoErrors.email = 'Email is required';
+    } else if (!isValidEmail(infoData.email)) {
+      infoErrors.email = 'Invalid email address';
+    }
+    if (!infoData.phoneNumber.match(/^\+49\d+/)) {
+      infoErrors.phoneNumber = 'Phone Number must start with "+49"';
+    }
   
-    const TableSubmit = (e) => {
-        e.preventDefault();
-                    const isValid = validateTableForm()
-                    if(page === 1 && isValid){
-                        alert("FORM SUBMITTED")
-                        setPage((currItem) => currItem + 1)
-                    }else{
-                      setPage((currItem) => currItem + 1);}}
+    setInfoErrors(infoErrors); // Change variable name to infoErrors
+  
+    // Return true if there are no errors, indicating the form is valid
+    return Object.keys(infoErrors).length === 0;
+  };
+  
+  // Helper function to validate email
+  const isValidEmail = (email) => {
+    // Use a regular expression for basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+  
+  const handleSubmit = (e) => { // Change function name to handleSubmit
+    e.preventDefault();
+    const isTableValid = validateTableForm();
+    const isInfoValid = validateInfoForm();
+    if (page === 0 && isTableValid) {
+      setPage((currItem) => currItem + 1);
+    } if (page === 1 && isInfoValid) {
+      setPage((currItem) => currItem + 1);
+    }
+  };
+  
 
   return (
     <div className="form">
@@ -75,9 +108,9 @@ const Form = () => {
             <div className="footers">
                 <button  hidden={page===2 || page===0}
                 onClick={() => {setPage((currItem) => currItem - 1);}}>Prev</button>
-                <button
+                <button type='submit'
                 hidden={page===2}
-                onClick={TableSubmit}>
+                onClick={handleSubmit}>
                 {page === 1?"Confirm" : "Book A Table"}</button>
             </div>
         </div>

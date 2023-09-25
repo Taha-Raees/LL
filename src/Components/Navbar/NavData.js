@@ -7,7 +7,7 @@ const topNav=[
     {
         id: 1,
         Label: "Menu",
-        to:"/menu"
+        to:"/Menu"
     },
     {
         id: 1,
