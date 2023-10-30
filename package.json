@@ -20,6 +20,7 @@
     "scss": "^0.2.4"
   },
   "devDependencies": {
-    "eslint": "^8.52.0"
+    "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.0"
   }
 }
