@@ -3,9 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData= async ()=>{
-  const res = await fetch ("mtr-littlelemon.vercel.app/api/categories",{
-    cache:"no-store"
-  })
+  const apiUrl = process.browser ? `${window.location.origin}/api/categories` : "http://localhost:3000/api/categories";
+
+
+
+
+const res = await fetch(apiUrl, {
+  cache: "no-store",
+});
   if(!res.ok){
     throw new Error("Failed")
   }
