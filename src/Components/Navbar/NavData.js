@@ -5,22 +5,22 @@ const topNav=[
         to:"/"
     },
     {
-        id: 1,
+        id: 2,
         Label: "Menu",
         to:"/Menu"
     },
     {
-        id: 1,
+        id: 3,
         Label: "Reservation",
         to:"/ReservationForm"
     },
     {
-        id: 1,
+        id: 4,
         Label: "Team",
         to:"#"
     },
     {
-        id: 1,
+        id: 5,
         Label: "Contact",
         to:"#"
     },
