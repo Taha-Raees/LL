@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const getData = async () => {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL + "/api/categories";
+  const apiUrl = "https://ll-api-8cdf78efae09.herokuapp.com/";
   
   const res = await fetch(apiUrl, {
     cache: "no-store"
